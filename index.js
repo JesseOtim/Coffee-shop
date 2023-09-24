@@ -1,0 +1,90 @@
+// const Validate = (event) => {
+//     let error = 0
+
+//     event.preventDefault();
+//     // pick inputs
+//     let password = document.getElementById("password");
+//     let email = document.getElementById("email")
+
+
+//     // pick error sections
+//     let passwordError = document.getElementById("passwordErr")
+//     let emailError = document.getElementById("emailErr")
+   
+
+
+//     // // validating password input emptiness
+//     // if(password.value == ""){
+//     //     password.style.border = "2px solid red"
+//     //     passwordError.innerHTML = "Password can not be empty"
+//     //     passwordError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+//     //     error++
+//     // }
+//     //  // validating password for minimum length
+//     // else if(password.value.length < 3){
+//     //     password.style.border = "2px solid red"
+//     //     passwordError.innerHTML = "Password must be atleast 3 letters"
+//     //     passwordError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+//     //     error++
+//     // }
+//     // // validating password for maximum length
+//     // else if(password.value.length > 11){
+//     //     password.style.border = "2px solid red"
+//     //     passwordError.innerHTML = "Password must be less than 11 letters"
+//     //     passwordError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+//     //     error++
+//     // } else {
+//     //     password.style.border = "2px solid green"
+//     //     passwordError.innerHTML = ""
+//     // }
+
+
+//     // validating email input emptiness
+//     if(email.value == ""){
+//         email.style.border = "2px solid red"
+//         emailError.innerHTML = "Email can not be empty"
+//         emailError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+//         error++
+//     }
+//      // validating email for minimum length
+//     else if(email.value.length < 3){
+//         email.style.border = "2px solid red"
+//         emailError.innerHTML = "Email must be atleast 3 characters"
+//         emailError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+//         error++
+//     }
+//     // validating email for maximum length
+//     else if(email.value.length > 50){
+//         email.style.border = "2px solid red"
+//         emailError.innerHTML = "Email must be less than 50 characters"
+//         emailError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+//         error++
+//     } 
+//     else{
+//         email.style.border = "2px solid green"
+//         emailError.innerHTML = ""
+//     }
+
+//     // password validation
+//   const passwordregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+//   if (password.value == "") {
+//     password.style.border = "2px solid red";
+//     passwordError.innerHTML = "Password can't be blank";
+//     passwordError.style =
+//       "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+//     error++;
+    
+//   } else if (!password.value.match(passwordregex)) {
+//     password.style.border = "2px solid red";
+//     passwordError.textContent = "Please put in the correct password";
+//     passwordError.style =
+//       "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+//     error++;
+    
+//   } else {
+//     password.style.border = "2px solid darkgreen";
+//     passwordError.innerHTML = "";
+//   }
+
+// }

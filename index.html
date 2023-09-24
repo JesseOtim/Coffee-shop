@@ -30,26 +30,36 @@
         
             </div>
 
+            <!-- Jasmine Dragon -->
+            <!-- palms of their hands -->
+
             <div class="content">
-                <h1>A gift from <br> <span> Uncle </span> <br>Iroh</h1>
-                <p class="par"> Uncle Iroh and his Nephew Zuko welcome you to the Jasmine Dragon <br> for a cup of hot cocoa. It's all made with love from the palms of their hands, every taste, <br> every sip is breathtaking</b></p>
+                <h1>A gift from <br> <span> Uncle </span> <br>Iroh</h1> 
+                <p class="par"> Uncle Iroh welcomes you <br> for a cup of hot cocoa all freshly made with love. Every turn, <br> every sip is breathtaking</b></p>
                  
                 <button class="cn"><a href="#">Join Us</a></button>
 
-                <div class="form">
-                    <h2>login Here</h2>
-                    <input type="email" name="email" placeholder="Enter Email Here">
-                    <input type="password" name="" placeholder="Enter Password Here">
-                    <button class="btnn"><a href="#">login</a></button>
+                <form id="regForm" action="#" name="submit" onsubmit="return Validate(event);" method="POST">
+                    <div class="form">
+                        <h2>Tea Cup</h2>
+                        <input type="email" id="email" name="email" placeholder="Enter Email Here">
+                        <small id="emailErr"></small>
+                        <input type="password" id="password" name="" placeholder="Enter Password Here">
+                        <small id="passwordErr"></small>
+                        <button class="btnn" id="submit"><a href="#"></a>Login</button>
 
-                    <p class="link">Don't have an account<br>
-                    <a href="#">Sign up</a> here</p>
-                    <p class="liw">Log in with</p>
+                        <p class="link">Don't have an account<br>
+                        <a href="#">Sign up > </a></p>
+                        <!-- <p class="liw"> <a> > Home </a></p> -->
 
-                </div>
+
+                        
+                    </div>
+               </form>
             </div>
         </div>
     
 
     </body>
+    <script src="index.js"></script>
 </html>

@@ -1,29 +1,29 @@
- *{
+ * {
     margin: 0;
     padding: 0;
  }
 
- .main{
+ .main {
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url(images/andre-benz-unsplash.jpg);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url(images/andre-benz-unsplash.jpg);
     background-position: center;
     background-size: cover;
     height: 109vh;
  }
 
- .navbar{
+ .navbar {
     width: 1200px;
     height: 75px;
     margin: auto;
  }
 
- .icon{
+ .icon {
     width: 200px;
     float: left;
     height: 70px;
  }
 
- .logo{
+ .logo {
     color: orangered;
     font-size: 35px;
     font-family: Arial;
@@ -32,27 +32,27 @@
     padding-top: 10px;
  }
 
- .menu{
+ .menu {
     width: 400px;
     float: left;
     height: 70px;
  }
 
- ul{
+ ul {
     float: left;
     display: flex;
     justify-content: center;
     align-items: center;
  }
 
- ul li{
+ ul li {
     list-style: none;
     margin-left: 62px;
     margin-top: 27px;
     font-size: 14px;
  }
 
- ul li a{
+ ul li a {
     text-decoration: none;
     color: white;
     font-family: Arial;
@@ -60,17 +60,17 @@
     transition: 0.4s ease-in-out;
  }
 
- ul li a:hover{
-    color: orangered;
+ ul li a:hover {
+    color: darkgreen;
  }
 
- .search{
+ .search {
     width: 330px;
     float: left;
     margin-left: 270px;
  }
 
- .srch{
+ .srch {
     font-family: 'Times New Roman';
     width: 200px;
     height: 40px;
@@ -86,8 +86,8 @@
     border-bottom-left-radius: 5px;
  }
 
- .btn{
-    width:100px;
+ .btn {
+    width: 100px;
     height: 40px;
     background: orange;
     border: 2px solid orange;
@@ -98,16 +98,15 @@
     border-bottom-right-radius: 5px;
  }
 
- .btn:focus{
+ .btn:focus {
     outline: none;
  }
 
- .srch:focus{
+ .srch:focus {
     outline: none;
  }
 
-
- .content{
+  .content {
     width: 1200px;
     height: auto;
     margin: auto;
@@ -115,7 +114,7 @@
     position: relative;
  }
 
- .content .par{
+ .content .par {
     padding-left: 20px;
     padding-bottom: 25px;
     font-family: Arial;
@@ -123,7 +122,7 @@
     line-height: 30px;
  }
 
- .content h1{
+ .content h1 {
     font-family: 'Times New Roman';
     font-size: 50px;
     padding-left: 20px;
@@ -131,7 +130,7 @@
     letter-spacing: 2px;
  }
 
- .content .cn{
+ .content .cn {
     width: 160px;
     height: 40px;
     background: orange;
@@ -139,30 +138,32 @@
     margin-bottom: 10px;
     margin-left: 20px;
     font-size: 18px;
+    font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
     transition: .4s ease;
  }
 
- .content .cn a{
+ .content .cn a {
     text-decoration: none;
     color: black;
     transition: .3s ease;
  }
 
- .cn:hover{
-    background-color: white;
+ .cn:hover {
+    background-color: orangered;
+    
  }
 
- .content span{
+ .content span {
     color: orangered;
     font-size: 60px;
  }
 
- .form{
+ .form {
     width: 250px;
     height: 380px;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%);
     position: absolute;
     top: -20px;
     left: 870px;
@@ -170,19 +171,19 @@
     padding: 25px;
  }
 
- .form h2{
+ .form h2 {
     width: 220px;
     font-family: sans-serif;
     text-align: center;
     color: orangered;
     font-size: 22px;
-    background-color: white;
+    background-color: darkgreen;
     border-radius: 10px;
     margin: 2px;
     padding: 8px;
  }
 
- .form input{
+ .form input {
     width: 240px;
     height: 35px;
     background: transparent;
@@ -195,18 +196,21 @@
     letter-spacing: 1px;
     margin-top: 30px;
     font-family: sans-serif;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
  }
 
- .form input:focus{
+ .form input:focus {
     outline: none;
  }
 
- ::placeholder{
+ ::placeholder {
     color: white;
     font-family: Arial;
  }
 
- .btnn{
+ .btnn {
     width: 240px;
     height: 40px;
     background: orangered;
@@ -216,34 +220,36 @@
     border-radius: 10px;
     cursor: pointer;
     color: white;
+    transition: 0.5s ease;
  }
 
- .btnn:hover{
+ .btnn:hover {
     background: white;
     color: orangered;
  }
 
- .btnn a{
+ .btnn a {
     text-decoration: none;
     color: black;
     font-weight: bold;
  }
 
- .form .link{
+ .form .link {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
     padding-top: 20px;
     text-align: center;
  }
 
- .form .link a{
+ .form .link a {
     text-decoration: none;
     color: orangered;
  }
 
- .liw{
+ /* .liw {
     padding-top: 15px;
     padding-bottom: 10px;
     text-align: center;
- }
-
+    color: orange;
+    font-weight: bold;
+ } */
