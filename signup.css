@@ -15,7 +15,7 @@
  }
 
  .icon {
-    width: 200px;
+    width: 280px;
     float: left;
     height: 70px;
  }
@@ -30,7 +30,7 @@
  }
 
  .menu {
-    width: 1000px;
+    width: 800px;
     float: left;
     height: 70px;
  }
@@ -60,3 +60,52 @@
  ul li a:hover {
     color: darkgreen;
  }
+
+ img{
+   width: 700px;
+   height: 900px;
+ }
+
+
+form {
+   width: 300px;
+   margin-left: 100px;
+   margin-bottom: 50px;
+   align-items: center;
+}
+
+form label {
+   display: flex;
+   margin-top: 5px;
+   font-size: 18px;
+}
+
+form input {
+   width: 424px;
+   padding: 7px;
+   border: none;
+   border: 1px solid grey;
+   border-radius: 15px;
+   outline: none;
+}
+
+.btn {
+   width: 424px;
+   border-radius: 15px;
+}
+
+
+.logInbox a {
+   text-decoration: none;
+   color: darkgreen;
+}
+
+p {
+   text-align: center;
+   font-size: 15px;
+   color: black;
+   margin-top: 5px;
+   font-weight: bold;
+   margin-left: 60px;
+
+}
