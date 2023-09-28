@@ -1,72 +1,129 @@
+const form = document.getElementById("regForm"); // Replace with your form's actual ID
+form.addEventListener("submit", Validate);
 const Validate = (event) => {
-    let error = 0
+  let error = 0;
+  //   const form = document.getElementById("regForm"); // Replace with your form's actual ID
+  //   form.addEventListener("submit", Validate);
+  event.preventDefault();
+  // pick inputs
+  let firstname = document.getElementById("Firstname");
+  let lastname = document.getElementById("Lastname");
+  let password = document.getElementById("password");
+  let confirmpassword = document.getElementById("confirmpassword");
+  let email = document.getElementById("email");
 
-    event.preventDefault();
-    // pick inputs
-    
-    let password = document.getElementById("password");
-    let email = document.getElementById("email")
+  // pick error sections
+  let firstnameError = document.getElementById("firstnameErr");
+  let lastnameError = document.getElementById("lastnameErr");
+  let passwordError = document.getElementById("passwordErr");
+  let emailError = document.getElementById("emailErr");
+  let confirmpasswordError = document.getElementById("confirmpasswordErr");
 
+  // // validating password input emptiness
+  // if(password.value == ""){
+  //     password.style.border = "2px solid red"
+  //     passwordError.innerHTML = "Password can not be empty"
+  //     passwordError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //     error++
+  // }
+  //  // validating password for minimum length
+  // else if(password.value.length < 3){
+  //     password.style.border = "2px solid red"
+  //     passwordError.innerHTML = "Password must be atleast 3 letters"
+  //     passwordError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //     error++
+  // }
+  // // validating password for maximum length
+  // else if(password.value.length > 11){
+  //     password.style.border = "2px solid red"
+  //     passwordError.innerHTML = "Password must be less than 11 letters"
+  //     passwordError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //     error++
+  // } else {
+  //     password.style.border = "2px solid green"
+  //     passwordError.innerHTML = ""
+  // }
 
-    // pick error sections
-   
-    let passwordError = document.getElementById("passwordErr")
-    let emailError = document.getElementById("emailErr")
-   
+  // First name Validation
+  if (firstname.value == "") {
+    firstname.style.border = "2px solid red";
+    firstnameError.innerHTML = "Please the name cannot be empty";
+    firstnameError.style =
+      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++;
+  } else if (firstname.value.length < 5) {
+    firstname.style.border = "2px solid red";
+    firstnameError.innerHTML =
+      "Please the First name must be at least 5 letters";
+    firstnameError.style =
+      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++;
+  } else if (firstname.value.length > 50) {
+    firstname.style.border = "2px solid red";
+    firstnameError.innerHTML =
+      "Please the first name must be less than 50 letters";
+    firstnameError.style =
+      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++;
+  } else {
+    firstname.style.border = "2px solid green";
+    firstnameError.innerHTML = "";
+  }
 
-    // // validating password input emptiness
-    // if(password.value == ""){
-    //     password.style.border = "2px solid red"
-    //     passwordError.innerHTML = "Password can not be empty"
-    //     passwordError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    //     error++
-    // }
-    //  // validating password for minimum length
-    // else if(password.value.length < 3){
-    //     password.style.border = "2px solid red"
-    //     passwordError.innerHTML = "Password must be atleast 3 letters"
-    //     passwordError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    //     error++
-    // }
-    // // validating password for maximum length
-    // else if(password.value.length > 11){
-    //     password.style.border = "2px solid red"
-    //     passwordError.innerHTML = "Password must be less than 11 letters"
-    //     passwordError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    //     error++
-    // } else {
-    //     password.style.border = "2px solid green"
-    //     passwordError.innerHTML = ""
-    // }
+  // Last name Validation
+  if (lastname.value == "") {
+    lastname.style.border = "2px solid red";
+    lastnameError.innerHTML = "Please fill in the last name";
+    lastnameError.style =
+      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++;
+  } else if (lastname.value.length < 5) {
+    lastname.style.border = "2px solid red";
+    lastnameError.innerHTML = "Please the last name must be atleast 5 letters";
+    lastnameError.style =
+      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++;
+  } else if (lastname.value.length > 50) {
+    lastname.style.border = "2px solid red";
+    lastnameError.innerHTML =
+      "Please the last name must be less than 50 letters";
+    lastnameError.style =
+      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++;
+  } else {
+    lastname.style.border = "2px solid green";
+    lastnameError.innerHTML = "";
+  }
 
-  
-    // validating email input emptiness
-    if(email.value == ""){
-        email.style.border = "2px solid red"
-        emailError.innerHTML = "Email can not be empty"
-        emailError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-        error++
-    }
-     // validating email for minimum length
-    else if(email.value.length < 3){
-        email.style.border = "2px solid red"
-        emailError.innerHTML = "Email must be atleast 3 characters"
-        emailError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-        error++
-    }
-    // validating email for maximum length
-    else if(email.value.length > 50){
-        email.style.border = "2px solid red"
-        emailError.innerHTML = "Email must be less than 50 characters"
-        emailError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-        error++
-    } 
-    else{
-        email.style.border = "2px solid green"
-        emailError.innerHTML = ""
-    }
+  // validating email input emptiness
+  if (email.value == "") {
+    email.style.border = "2px solid red";
+    emailError.innerHTML = "Email can not be empty";
+    emailError.style =
+      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++;
+  }
+  // validating email for minimum length
+  else if (email.value.length < 3) {
+    email.style.border = "2px solid red";
+    emailError.innerHTML = "Email must be atleast 3 characters";
+    emailError.style =
+      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++;
+  }
+  // validating email for maximum length
+  else if (email.value.length > 50) {
+    email.style.border = "2px solid red";
+    emailError.innerHTML = "Email must be less than 50 characters";
+    emailError.style =
+      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++;
+  } else {
+    email.style.border = "2px solid green";
+    emailError.innerHTML = "";
+  }
 
-    // password validation
+  // password validation
   const passwordregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
   if (password.value == "") {
@@ -75,21 +132,36 @@ const Validate = (event) => {
     passwordError.style =
       "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++;
-    
   } else if (!password.value.match(passwordregex)) {
     password.style.border = "2px solid red";
     passwordError.textContent = "Please put in the correct password";
     passwordError.style =
       "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++;
-    
   } else {
     password.style.border = "2px solid darkgreen";
     passwordError.innerHTML = "";
   }
 
-}
+  // Confirm password
 
+  if (confirmpassword.value == "") {
+    confirmpassword.style.border = "2px solid red";
+    confirmpasswordError.innerHTML = "Password can't be blank";
+    confirmpasswordError.style =
+      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++;
+  } else if (confirmpassword.value !== password.value) {
+    confirmpassword.style.border = "2px solid red";
+    confirmpasswordError.textContent = "Passwords don't match";
+    confirmpasswordError.style =
+      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++;
+  } else {
+    confirmpassword.style.border = "2px solid darkgreen";
+    confirmpasswordError.innerHTML = "";
+  }
+};
 
 //   // // Get references to the input field and search button
 //   // const searchInput = document.getElementById('searchInput');
