@@ -8,7 +8,7 @@
     background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url(images/COFFEE-1507133750040-4a8f57021571.jfif);
     background-position: center;
     background-size: cover;
-    height: 109vh;
+    height: 129vh;
  }
 
  .navbar {
@@ -75,14 +75,20 @@
 
  .log{
    color: orangered;
+   margin-left: 120px;
  }
 
 
 form {
-   width: 300px;
+   width: 470px;
+   height: 715px;
    margin-top: 30px;
-   margin-left: 500px;
+   margin-left: 450px;
    align-items: center;
+   background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%);
+   position: absolute;
+   border-radius: 10px;
+   padding: 25px;
    
 }
 
@@ -97,11 +103,17 @@ form label {
 form input {
    width: 424px;
    padding: 7px;
-   border: none;
-   border: 1px solid grey;
-   border-radius: 15px;
+   background: transparent;
+   color: white;
+   border-top: none;
+   border-right: none;
+   border-left: none;
+   border-bottom: 1px solid orangered;
+   border-radius: 10px;
    margin-bottom: 30px;
    outline: none;
+   padding-left: 5px;
+   padding-right: 5px;
 }
 
 .btn {
@@ -120,4 +132,9 @@ p {
    font-weight: bold;
    margin-left: 60px;
 
+}
+
+p a{
+text-decoration: none;
+color: orangered;
 }
