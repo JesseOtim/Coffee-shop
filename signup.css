@@ -85,7 +85,7 @@
 form {
    width: 470px;
    height: 715px;
-   margin-top: 30px;
+   margin-top: 1px;
    margin-left: 450px;
    align-items: center;
    background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%);
@@ -127,8 +127,7 @@ form input {
 p {
    text-align: center;
    font-size: 15px;
-   color: black;
-   margin-top: 5px;
+   color: white;
    font-weight: bold;
    margin-left: 60px;
 
