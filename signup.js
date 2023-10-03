@@ -1,5 +1,5 @@
-const form = document.getElementById("regForm"); // Replace with your form's actual ID
-form.addEventListener("submit", Validate);
+// const form = document.getElementById("regForm"); // Replace with your form's actual ID
+// form.addEventListener("submit", Validate);
 const Validate = (event) => {
   let error = 0;
   //   const form = document.getElementById("regForm"); // Replace with your form's actual ID
