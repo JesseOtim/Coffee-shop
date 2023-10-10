@@ -1,21 +1,20 @@
+// const form = document.getElementById("regForm"); // Replace with your form's actual ID
+// form.addEventListener("submit", Validate);
 const Validate = (event) => {
   let error = 0;
-
+  //   const form = document.getElementById("regForm"); // Replace with your form's actual ID
+  //   form.addEventListener("submit", Validate);
   event.preventDefault();
   // pick inputs
-  let firstname = document.getElementById("firstname");
-  let lastname = document.getElementById("lastname");
-  let email = document.getElementById("email");
+ 
   let password = document.getElementById("password");
-  let confirmpassword = document.getElementById("confirmpassword");
-  
+  let email = document.getElementById("email");
 
   // pick error sections
-  let firstnameError = document.getElementById("firstnameErr");
-  let lastnameError = document.getElementById("lastnameErr");
-  let emailError = document.getElementById("emailErr");
+
   let passwordError = document.getElementById("passwordErr");
-  let confirmpasswordError = document.getElementById("confirmpasswordErr");
+  let emailError = document.getElementById("emailErr");
+ 
 
   // // validating password input emptiness
   // if(password.value == ""){
@@ -41,61 +40,6 @@ const Validate = (event) => {
   //     password.style.border = "2px solid green"
   //     passwordError.innerHTML = ""
   // }
-
-  // validating first name input emptiness
-  if (firstname.value == "") {
-    firstname.style.border = "2px solid red";
-    firstnameError.innerHTML = "Please first name can not be empty";
-    firstnameError.style =
-      "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  }
-  // validating first name for minimum length
-  else if (firstname.value.length < 3) {
-    firstname.style.border = "2px solid red";
-    firstnameError.innerHTML =
-      "Please the first name must be atleast 3 letters";
-    firstnameError.style =
-      "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  }
-  // validating first name for maximum length
-  else if (firstname.value.length > 14) {
-    firstname.style.border = "2px solid red";
-    firstnameError.innerHTML =
-      "Please the first name must be less than 14 letters";
-    firstnameError.style =
-      "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else {
-    firstname.style.border = "2px solid green";
-    firstnameError.innerHTML = "";
-  }
-
-  // Last name Validation
-  if (lastname.value == "") {
-    lastname.style.border = "2px solid red";
-    lastnameError.innerHTML = "Please fill in the last name";
-    lastnameError.style =
-      "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else if (lastname.value.length < 5) {
-    lastname.style.border = "2px solid red";
-    lastnameError.innerHTML = "Please the last name must be atleast 5 letters";
-    lastnameError.style =
-      "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else if (lastname.value.length > 50) {
-    lastname.style.border = "2px solid red";
-    lastnameError.innerHTML =
-      "Please the last name must be less than 50 letters";
-    lastnameError.style =
-      "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else {
-    lastname.style.border = "2px solid green";
-    lastnameError.innerHTML = "";
-  }
 
   // validating email input emptiness
   if (email.value == "") {
@@ -145,167 +89,35 @@ const Validate = (event) => {
     passwordError.innerHTML = "";
   }
 
-   // Confirm password
-
-   if (confirmpassword.value == "") {
-    confirmpassword.style.border = "2px solid red";
-    confirmpasswordError.innerHTML = "Password can't be blank";
-    confirmpasswordError.style =
-      "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else if (confirmpassword.value !== password.value) {
-    confirmpassword.style.border = "2px solid red";
-    confirmpasswordError.textContent = "Passwords don't match";
-    confirmpasswordError.style =
-      "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else {
-    confirmpassword.style.border = "2px solid darkgreen";
-    confirmpasswordError.innerHTML = "";
-  }
+  
 };
 
-//   // // Get references to the input field and search button
-//   // const searchInput = document.getElementById('searchInput');
-//   // const searchButton = document.getElementById('searchButton');
+ // JavaScript code
+ const searchInput = document.getElementById('searchInput');
+ const searchButton = document.getElementById('searchButton');
+ const searchResults = document.getElementById('searchResults');
 
-//   // // Add a click event listener to the search button
-//   // searchButton.addEventListener('click', function() {
-//   //     // Get the value of the input field
-//   //     const searchTerm = searchInput.value.trim(); // trim removes leading/trailing whitespace
+ // Function to perform the search
+ function performSearch() {
+   // Get the search query from the input field
+   const query = searchInput.value.toLowerCase();
 
-//   //     // Check if the input is empty
-//   //     if (searchTerm === '') {
-//   //         alert('Please enter a search term.'); // You can replace this with your preferred validation method
-//   //     } else {
-//   //         // Perform the search or other action here
-//   //         alert(`Searching for: ${searchTerm}`);
-//   //         // Replace the alert with the actual search logic
-//   //     }
-//   // });
+   // Perform your search logic here (e.g., filtering a list of items)
+   // Replace this with your actual search logic
+   const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+   const filteredItems = items.filter(item => item.toLowerCase().includes(query));
 
-// //   document.getElementById('liveAlertBtn').addEventListener('click', function () {
-// //     const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-// //     const alertHTML = `
-// //     <div class="alert alert-success alert-dismissible fade show" role="alert">
-// //         This is a live Bootstrap alert! You can customize its content.
-// //         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-// //             <span aria-hidden="true">&times;</span>
-// //         </button>
-// //     </div>
-// //     `;
+   // Display the search results
+   const resultsHTML = filteredItems.map(item => `<p>${item}</p>`).join('');
+   searchResults.innerHTML = resultsHTML;
+ }
 
-// //     // Clear any existing alerts
-// //     alertPlaceholder.innerHTML = '';
+ // Add a click event listener to the search button
+ searchButton.addEventListener('click', performSearch);
 
-// //     // Insert the new alert
-// //     alertPlaceholder.insertAdjacentHTML('beforeend', alertHTML);
-
-// //     // You can also use Bootstrap's JavaScript functions to initialize the alert (optional)
-// //     // For example, to close the alert after a few seconds:
-// //     const alertElement = document.querySelector('.alert');
-// //     if (alertElement) {
-// //         const bsAlert = new bootstrap.Alert(alertElement);
-// //         setTimeout(function () {
-// //             bsAlert.close();
-// //         }, 5000); // Close the alert after 5 seconds
-// //     }
-// // });
-
-// // document.getElementById('liveAlertBtn').addEventListener('click', function () {
-// //   const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-// //   const alertHTML = `
-// //   <div class="alert alert-success alert-dismissible fade show" role="alert">
-// //       This is a live Bootstrap alert! You can customize its content.
-// //       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-// //           <span aria-hidden="true">&times;</span>
-// //       </button>
-// //   </div>
-// //   `;
-
-// //   // Clear any existing alerts
-// //   alertPlaceholder.innerHTML = '';
-
-// //   // Insert the new alert
-// //   alertPlaceholder.insertAdjacentHTML('beforeend', alertHTML);
-
-// //   // You can also use Bootstrap's JavaScript functions to initialize the alert (optional)
-// //   // For example, to close the alert after a few seconds:
-// //   const alertElement = document.querySelector('.alert');
-// //   if (alertElement) {
-// //       const bsAlert = new bootstrap.Alert(alertElement);
-// //       setTimeout(function () {
-// //           bsAlert.close();
-// //       }, 5000); // Close the alert after 5 seconds
-// //   }
-// // });
-// const ValidatePassword = (password) => {
-//   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-
-//   if (password === "") {
-//       return {
-//           isValid: false,
-//           errorMessage: "Password can't be blank",
-//       };
-//   } else if (!password.match(passwordRegex)) {
-//       return {
-//           isValid: false,
-//           errorMessage: "Please put in the correct password",
-//       };
-//   } else {
-//       return {
-//           isValid: true,
-//       };
-//   }
-// };
-
-// const ValidateEmail = (email) => {
-//   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-//   if (email === "") {
-//       return {
-//           isValid: false,
-//           errorMessage: "Email can't be blank",
-//       };
-//   } else if (!email.match(emailRegex)) {
-//       return {
-//           isValid: false,
-//           errorMessage: "Please enter a valid email address",
-//       };
-//   } else {
-//       return {
-//           isValid: true,
-//       };
-//   }
-// };
-
-// const passwordInput = document.getElementById("password");
-// const emailInput = document.getElementById("email");
-// const passwordError = document.getElementById("passwordErr");
-// const emailError = document.getElementById("emailErr");
-
-// passwordInput.addEventListener("input", () => {
-//   const password = passwordInput.value.trim();
-//   const validationResult = ValidatePassword(password);
-
-//   if (validationResult.isValid) {
-//       passwordInput.style.border = "2px solid green";
-//       passwordError.innerHTML = "";
-//   } else {
-//       passwordInput.style.border = "";
-//       passwordError.innerHTML = validationResult.errorMessage;
-//   }
-// });
-
-// emailInput.addEventListener("input", () => {
-//   const email = emailInput.value.trim();
-//   const validationResult = ValidateEmail(email);
-
-//   if (validationResult.isValid) {
-//       emailInput.style.border = "2px solid green";
-//       emailError.innerHTML = "";
-//   } else {
-//       emailInput.style.border = "";
-//       emailError.innerHTML = validationResult.errorMessage;
-//   }
-// });
+ // Optionally, you can also trigger the search when the user presses Enter in the input field
+ searchInput.addEventListener('keydown', (event) => {
+   if (event.key === 'Enter') {
+     performSearch();
+   }
+ });
