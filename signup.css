@@ -84,7 +84,7 @@
 
 form {
    width: 470px;
-   height: 715px;
+   height: 726px;
    margin-top: 1px;
    margin-left: 450px;
    align-items: center;
@@ -95,17 +95,17 @@ form {
    
 }
 
-form label {
+/* form label {
    display: flex;
    color: white;
    font-size: 18px;
    font-weight: bold;
    
-}
+} */
 
 form input {
    width: 424px;
-   padding: 7px;
+   padding: 10px;
    background: transparent;
    color: white;
    border-top: none;
@@ -113,15 +113,31 @@ form input {
    border-left: none;
    border-bottom: 1px solid orangered;
    border-radius: 10px;
-   margin-bottom: 30px;
+   margin-top: 30px;
    outline: none;
    padding-left: 5px;
    padding-right: 5px;
+   
+}
+
+.form input:focus {
+   outline: none;
+}
+
+::placeholder {
+   color: white;
+   font-weight: bold;
 }
 
 .btnn {
    width: 424px;
    border-radius: 15px;
+   padding: 6px;
+   margin-top: 20px;
+   background-color: darkgreen;
+   color: white;
+   border: none;
+   font-weight: bold;
 }
 
 p {
@@ -130,6 +146,7 @@ p {
    color: white;
    font-weight: bold;
    margin-left: 60px;
+   margin-top: 10px;
 
 }
 
