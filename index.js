@@ -104,7 +104,7 @@ const Validate = (event) => {
 
    // Perform your search logic here (e.g., filtering a list of items)
    // Replace this with your actual search logic
-   const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+   const items = ['Coffee', 'Tea', 'Cappucino', 'Cocoa'];
    const filteredItems = items.filter(item => item.toLowerCase().includes(query));
 
    // Display the search results
