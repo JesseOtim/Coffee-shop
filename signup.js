@@ -6,18 +6,15 @@ const Validate = (event) => {
   //   form.addEventListener("submit", Validate);
   event.preventDefault();
   // pick inputs
-  let firstname = document.getElementById("Firstname");
-  let lastname = document.getElementById("Lastname");
+ 
   let password = document.getElementById("password");
-  let confirmpassword = document.getElementById("confirmpassword");
   let email = document.getElementById("email");
 
   // pick error sections
-  let firstnameError = document.getElementById("firstnameErr");
-  let lastnameError = document.getElementById("lastnameErr");
+
   let passwordError = document.getElementById("passwordErr");
   let emailError = document.getElementById("emailErr");
-  let confirmpasswordError = document.getElementById("confirmpasswordErr");
+ 
 
   // // validating password input emptiness
   // if(password.value == ""){
@@ -43,57 +40,6 @@ const Validate = (event) => {
   //     password.style.border = "2px solid green"
   //     passwordError.innerHTML = ""
   // }
-
-  // First name Validation
-  if (firstname.value == "") {
-    firstname.style.border = "2px solid red";
-    firstnameError.innerHTML = "Please the name cannot be empty";
-    firstnameError.style =
-      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else if (firstname.value.length < 5) {
-    firstname.style.border = "2px solid red";
-    firstnameError.innerHTML =
-      "Please the First name must be at least 5 letters";
-    firstnameError.style =
-      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else if (firstname.value.length > 50) {
-    firstname.style.border = "2px solid red";
-    firstnameError.innerHTML =
-      "Please the first name must be less than 50 letters";
-    firstnameError.style =
-      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else {
-    firstname.style.border = "2px solid green";
-    firstnameError.innerHTML = "";
-  }
-
-  // Last name Validation
-  if (lastname.value == "") {
-    lastname.style.border = "2px solid red";
-    lastnameError.innerHTML = "Please fill in the last name";
-    lastnameError.style =
-      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else if (lastname.value.length < 5) {
-    lastname.style.border = "2px solid red";
-    lastnameError.innerHTML = "Please the last name must be atleast 5 letters";
-    lastnameError.style =
-      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else if (lastname.value.length > 50) {
-    lastname.style.border = "2px solid red";
-    lastnameError.innerHTML =
-      "Please the last name must be less than 50 letters";
-    lastnameError.style =
-      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else {
-    lastname.style.border = "2px solid green";
-    lastnameError.innerHTML = "";
-  }
 
   // validating email input emptiness
   if (email.value == "") {
@@ -143,167 +89,5 @@ const Validate = (event) => {
     passwordError.innerHTML = "";
   }
 
-  // Confirm password
-
-  if (confirmpassword.value == "") {
-    confirmpassword.style.border = "2px solid red";
-    confirmpasswordError.innerHTML = "Password can't be blank";
-    confirmpasswordError.style =
-      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else if (confirmpassword.value !== password.value) {
-    confirmpassword.style.border = "2px solid red";
-    confirmpasswordError.textContent = "Passwords don't match";
-    confirmpasswordError.style =
-      "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++;
-  } else {
-    confirmpassword.style.border = "2px solid darkgreen";
-    confirmpasswordError.innerHTML = "";
-  }
+  
 };
-
-//   // // Get references to the input field and search button
-//   // const searchInput = document.getElementById('searchInput');
-//   // const searchButton = document.getElementById('searchButton');
-
-//   // // Add a click event listener to the search button
-//   // searchButton.addEventListener('click', function() {
-//   //     // Get the value of the input field
-//   //     const searchTerm = searchInput.value.trim(); // trim removes leading/trailing whitespace
-
-//   //     // Check if the input is empty
-//   //     if (searchTerm === '') {
-//   //         alert('Please enter a search term.'); // You can replace this with your preferred validation method
-//   //     } else {
-//   //         // Perform the search or other action here
-//   //         alert(`Searching for: ${searchTerm}`);
-//   //         // Replace the alert with the actual search logic
-//   //     }
-//   // });
-
-// //   document.getElementById('liveAlertBtn').addEventListener('click', function () {
-// //     const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-// //     const alertHTML = `
-// //     <div class="alert alert-success alert-dismissible fade show" role="alert">
-// //         This is a live Bootstrap alert! You can customize its content.
-// //         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-// //             <span aria-hidden="true">&times;</span>
-// //         </button>
-// //     </div>
-// //     `;
-
-// //     // Clear any existing alerts
-// //     alertPlaceholder.innerHTML = '';
-
-// //     // Insert the new alert
-// //     alertPlaceholder.insertAdjacentHTML('beforeend', alertHTML);
-
-// //     // You can also use Bootstrap's JavaScript functions to initialize the alert (optional)
-// //     // For example, to close the alert after a few seconds:
-// //     const alertElement = document.querySelector('.alert');
-// //     if (alertElement) {
-// //         const bsAlert = new bootstrap.Alert(alertElement);
-// //         setTimeout(function () {
-// //             bsAlert.close();
-// //         }, 5000); // Close the alert after 5 seconds
-// //     }
-// // });
-
-// // document.getElementById('liveAlertBtn').addEventListener('click', function () {
-// //   const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-// //   const alertHTML = `
-// //   <div class="alert alert-success alert-dismissible fade show" role="alert">
-// //       This is a live Bootstrap alert! You can customize its content.
-// //       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-// //           <span aria-hidden="true">&times;</span>
-// //       </button>
-// //   </div>
-// //   `;
-
-// //   // Clear any existing alerts
-// //   alertPlaceholder.innerHTML = '';
-
-// //   // Insert the new alert
-// //   alertPlaceholder.insertAdjacentHTML('beforeend', alertHTML);
-
-// //   // You can also use Bootstrap's JavaScript functions to initialize the alert (optional)
-// //   // For example, to close the alert after a few seconds:
-// //   const alertElement = document.querySelector('.alert');
-// //   if (alertElement) {
-// //       const bsAlert = new bootstrap.Alert(alertElement);
-// //       setTimeout(function () {
-// //           bsAlert.close();
-// //       }, 5000); // Close the alert after 5 seconds
-// //   }
-// // });
-// const ValidatePassword = (password) => {
-//   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-
-//   if (password === "") {
-//       return {
-//           isValid: false,
-//           errorMessage: "Password can't be blank",
-//       };
-//   } else if (!password.match(passwordRegex)) {
-//       return {
-//           isValid: false,
-//           errorMessage: "Please put in the correct password",
-//       };
-//   } else {
-//       return {
-//           isValid: true,
-//       };
-//   }
-// };
-
-// const ValidateEmail = (email) => {
-//   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-//   if (email === "") {
-//       return {
-//           isValid: false,
-//           errorMessage: "Email can't be blank",
-//       };
-//   } else if (!email.match(emailRegex)) {
-//       return {
-//           isValid: false,
-//           errorMessage: "Please enter a valid email address",
-//       };
-//   } else {
-//       return {
-//           isValid: true,
-//       };
-//   }
-// };
-
-// const passwordInput = document.getElementById("password");
-// const emailInput = document.getElementById("email");
-// const passwordError = document.getElementById("passwordErr");
-// const emailError = document.getElementById("emailErr");
-
-// passwordInput.addEventListener("input", () => {
-//   const password = passwordInput.value.trim();
-//   const validationResult = ValidatePassword(password);
-
-//   if (validationResult.isValid) {
-//       passwordInput.style.border = "2px solid green";
-//       passwordError.innerHTML = "";
-//   } else {
-//       passwordInput.style.border = "";
-//       passwordError.innerHTML = validationResult.errorMessage;
-//   }
-// });
-
-// emailInput.addEventListener("input", () => {
-//   const email = emailInput.value.trim();
-//   const validationResult = ValidateEmail(email);
-
-//   if (validationResult.isValid) {
-//       emailInput.style.border = "2px solid green";
-//       emailError.innerHTML = "";
-//   } else {
-//       emailInput.style.border = "";
-//       emailError.innerHTML = validationResult.errorMessage;
-//   }
-// });
