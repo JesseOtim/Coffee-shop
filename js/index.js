@@ -4,7 +4,6 @@
 let error = 0;
 
 const Validate = (event) => {
-
   //   const form = document.getElementById("regForm"); // Replace with your form's actual ID
   //   form.addEventListener("submit", Validate);
   event.preventDefault();
@@ -17,6 +16,34 @@ const Validate = (event) => {
 
   let passwordError = document.getElementById("passwordErr");
   let emailError = document.getElementById("emailErr");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+
+  emailInput.addEventListener("input", () => {
+    if (emailInput.value.trim() !== "") {
+      emailInput.style.border = "2px solid green";
+    } else {
+      emailInput.style.border = "2px solid red";
+    }
+  });
+
+  passwordInput.addEventListener("input", () => {
+    if (passwordInput.value.trim() !== "") {
+      passwordInput.style.border = "2px solid green";
+    } else {
+      passwordInput.style.border = "2px solid red";
+    }
+  });
+
+//   if (/* your email validation logic fails */) {
+//   email.style.border = "2px solid red";
+//   emailError.innerHTML = "Email is invalid"; // Set the error message
+//   emailError.style = "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
+//   error++;
+// } else {
+//   email.style.border = "2px solid green";
+//   emailError.innerHTML = "";
+// }
 
   // validating email input emptiness
   if (email.value == "") {
@@ -103,7 +130,7 @@ var baseUrl = "http://localhost:4000/api/auth/";
 
 if (error === 0) {
   // Only proceed with the login request if there are no validation errors
-  newLogin(click);
+  newLogin();
 }
 
 const submitButton = document.getElementById("submitbutton");
@@ -133,7 +160,7 @@ async function newLogin(event) {
       // alert(data.message)
       setTimeout(function () {
         if (data.data.role === "user") {
-          location.href = "/auth/signup.html";
+          location.href = "signup.html";
         }
       }, 500);
     }
