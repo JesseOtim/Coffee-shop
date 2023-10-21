@@ -16,31 +16,6 @@ const Validate = (event) => {
   let emailError = document.getElementById("emailErr");
  
 
-  // // validating password input emptiness
-  // if(password.value == ""){
-  //     password.style.border = "2px solid red"
-  //     passwordError.innerHTML = "Password can not be empty"
-  //     passwordError.style = "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-  //     error++
-  // }
-  //  // validating password for minimum length
-  // else if(password.value.length < 3){
-  //     password.style.border = "2px solid red"
-  //     passwordError.innerHTML = "Password must be atleast 3 letters"
-  //     passwordError.style = "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-  //     error++
-  // }
-  // // validating password for maximum length
-  // else if(password.value.length > 14){
-  //     password.style.border = "2px solid red"
-  //     passwordError.innerHTML = "Password must be less than 14 letters"
-  //     passwordError.style = "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-  //     error++
-  // } else {
-  //     password.style.border = "2px solid green"
-  //     passwordError.innerHTML = ""
-  // }
-
   // validating email input emptiness
   if (email.value == "") {
     email.style.border = "2px solid red";
@@ -124,6 +99,11 @@ const Validate = (event) => {
 
 
  var baseUrl = "http://localhost:4000/api/auth/";
+
+ if (error === 0) {
+  // Only proceed with the login request if there are no validation errors
+  newLogin(click);
+}
 
 document
   .getElementById("submitbutton")
