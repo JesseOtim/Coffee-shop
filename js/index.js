@@ -153,6 +153,11 @@ async function newLogin(event) {
     console.log(data, ">>>>>>>>>");
     if (data.status == 200) {
       // alert(data.message)
+      var toastEl = document.getElementById("liveToast");
+      //This bootstrap constructor shows or hides the toast
+      var toast = new bootstrap.Toast(toastEl);
+      toast.show();
+      // alert(data.message)
       setTimeout(function () {
         location.href = "/signup.html";
       }, 500);
