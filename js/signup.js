@@ -79,9 +79,9 @@ const Validate = (event) => {
     lastnameError.style =
       "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
     error++;
-  } else if (lastname.value.length < 5) {
+  } else if (lastname.value.length < 3) {
     lastname.style.border = "2px solid red";
-    lastnameError.innerHTML = "Please the last name must be atleast 5 letters";
+    lastnameError.innerHTML = "Please the last name must be atleast 3 letters";
     lastnameError.style =
       "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
     error++;
