@@ -64,7 +64,6 @@ const Validate = (event) => {
     passwordError.innerHTML = "";
   }
 
-  
 };
 
  // JavaScript code
@@ -105,11 +104,8 @@ const Validate = (event) => {
   newLogin(click);
 }
 
-document
-  .getElementById("submitbutton")
-  .addEventListener("click", function (click) {
-    newLogin(click);
-  });
+const submitButton = document.getElementById("submitbutton");
+submitButton.addEventListener("click", newLogin);
 
 async function newLogin(event) {
   event.preventDefault();
@@ -130,16 +126,18 @@ async function newLogin(event) {
       }),
     });
     const data = await response.json();
-    console.log(data, ">>>>>>>>>");
     if (data.status == 200) {
-      // alert(data.message)
+      console.log(data.data.role, ">>>>>>>>>");
+      // Show the toast only when the form is submitted successfully
       var toastEl = document.getElementById("liveToast");
       //This bootstrap constructor shows or hides the toast
       var toast = new bootstrap.Toast(toastEl);
       toast.show();
       // alert(data.message)
       setTimeout(function () {
-        location.href = "/signup.html";
+        if (data.data.role === 'user') {
+          location.href = "/pages/Products.html";
+        }
       }, 500);
     }
   } catch (error) {
