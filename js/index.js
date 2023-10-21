@@ -1,12 +1,15 @@
 // const form = document.getElementById("regForm"); // Replace with your form's actual ID
 // form.addEventListener("submit", Validate);
+
+let error = 0;
+
 const Validate = (event) => {
-  let error = 0;
+
   //   const form = document.getElementById("regForm"); // Replace with your form's actual ID
   //   form.addEventListener("submit", Validate);
   event.preventDefault();
   // pick inputs
- 
+
   let password = document.getElementById("password");
   let email = document.getElementById("email");
 
@@ -14,7 +17,6 @@ const Validate = (event) => {
 
   let passwordError = document.getElementById("passwordErr");
   let emailError = document.getElementById("emailErr");
- 
 
   // validating email input emptiness
   if (email.value == "") {
@@ -63,43 +65,43 @@ const Validate = (event) => {
     password.style.border = "2px solid darkgreen";
     passwordError.innerHTML = "";
   }
-
 };
 
- // JavaScript code
- const searchInput = document.getElementById('searchInput');
- const searchButton = document.getElementById('searchButton');
- const searchResults = document.getElementById('searchResults');
+// JavaScript code
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
+const searchResults = document.getElementById("searchResults");
 
- // Function to perform the search
- function performSearch() {
-   // Get the search query from the input field
-   const query = searchInput.value.toLowerCase();
+// Function to perform the search
+function performSearch() {
+  // Get the search query from the input field
+  const query = searchInput.value.toLowerCase();
 
-   // Perform your search logic here (e.g., filtering a list of items)
-   // Replace this with your actual search logic
-   const items = ['Coffee', 'Tea', 'Cappucino', 'Cocoa'];
-   const filteredItems = items.filter(item => item.toLowerCase().includes(query));
+  // Perform your search logic here (e.g., filtering a list of items)
+  // Replace this with your actual search logic
+  const items = ["Coffee", "Tea", "Cappucino", "Cocoa"];
+  const filteredItems = items.filter((item) =>
+    item.toLowerCase().includes(query)
+  );
 
-   // Display the search results
-   const resultsHTML = filteredItems.map(item => `<p>${item}</p>`).join('');
-   searchResults.innerHTML = resultsHTML;
- }
+  // Display the search results
+  const resultsHTML = filteredItems.map((item) => `<p>${item}</p>`).join("");
+  searchResults.innerHTML = resultsHTML;
+}
 
- // Add a click event listener to the search button
- searchButton.addEventListener('click', performSearch);
+// Add a click event listener to the search button
+searchButton.addEventListener("click", performSearch);
 
- // Optionally, you can also trigger the search when the user presses Enter in the input field
- searchInput.addEventListener('keydown', (event) => {
-   if (event.key === 'Enter') {
-     performSearch();
-   }
- });
+// Optionally, you can also trigger the search when the user presses Enter in the input field
+searchInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    performSearch();
+  }
+});
 
+var baseUrl = "http://localhost:4000/api/auth/";
 
- var baseUrl = "http://localhost:4000/api/auth/";
-
- if (error === 0) {
+if (error === 0) {
   // Only proceed with the login request if there are no validation errors
   newLogin(click);
 }
@@ -128,14 +130,9 @@ async function newLogin(event) {
     const data = await response.json();
     if (data.status == 200) {
       console.log(data.data.role, ">>>>>>>>>");
-      // Show the toast only when the form is submitted successfully
-      var toastEl = document.getElementById("liveToast");
-      var toast = new bootstrap.Toast(toastEl);
-      toast.show();
-
       // alert(data.message)
       setTimeout(function () {
-        if (data.data.role === 'user') {
+        if (data.data.role === "user") {
           location.href = "/auth/signup.html";
         }
       }, 500);
@@ -144,4 +141,3 @@ async function newLogin(event) {
     console.log(error);
   }
 }
-
