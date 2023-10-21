@@ -130,13 +130,13 @@ async function newLogin(event) {
       console.log(data.data.role, ">>>>>>>>>");
       // Show the toast only when the form is submitted successfully
       var toastEl = document.getElementById("liveToast");
-      //This bootstrap constructor shows or hides the toast
       var toast = new bootstrap.Toast(toastEl);
       toast.show();
+
       // alert(data.message)
       setTimeout(function () {
         if (data.data.role === 'user') {
-          location.href = "/pages/Products.html";
+          location.href = "/auth/signup.html";
         }
       }, 500);
     }
