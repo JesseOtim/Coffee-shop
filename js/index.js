@@ -123,42 +123,42 @@ const Validate = (event) => {
  });
 
 
-//  var baseUrl = "http://localhost:4000/api/auth/";
+ var baseUrl = "http://localhost:4000/api/auth/";
 
-// document
-//   .getElementById("submitbutton")
-//   .addEventListener("click", function (click) {
-//     newLogin(click);
-//   });
+document
+  .getElementById("submitbutton")
+  .addEventListener("click", function (click) {
+    newLogin(click);
+  });
 
-// async function newLogin(event) {
-//   event.preventDefault();
-//   let email = document.getElementById("email").value;
-//   let password = document.getElementById("password").value;
+async function newLogin(event) {
+  event.preventDefault();
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
 
-//   try {
-//     console.log(email);
-//     const response = await fetch(baseUrl + "login", {
-//       method: "POST",
-//       headers: {
-//         "content-type": "application/json",
-//       },
-//       mode: "cors",
-//       body: JSON.stringify({
-//         email: email,
-//         password: password,
-//       }),
-//     });
-//     const data = await response.json();
-//     console.log(data, ">>>>>>>>>");
-//     if (data.status == 200) {
-//       // alert(data.message)
-//       setTimeout(function () {
-//         location.href = "/pages/Products.html";
-//       }, 500);
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
+  try {
+    console.log(email);
+    const response = await fetch(baseUrl + "login", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      mode: "cors",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    });
+    const data = await response.json();
+    console.log(data, ">>>>>>>>>");
+    if (data.status == 200) {
+      // alert(data.message)
+      setTimeout(function () {
+        location.href = "/signup.html";
+      }, 500);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
 
