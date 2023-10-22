@@ -8,7 +8,6 @@ const Validate = (event) => {
   let email = document.getElementById("email");
   let password = document.getElementById("password");
   let confirmpassword = document.getElementById("confirmpassword");
-  
 
   // pick error sections
   let firstnameError = document.getElementById("firstnameErr");
@@ -16,31 +15,6 @@ const Validate = (event) => {
   let emailError = document.getElementById("emailErr");
   let passwordError = document.getElementById("passwordErr");
   let confirmpasswordError = document.getElementById("confirmpasswordErr");
-
-  // // validating password input emptiness
-  // if(password.value == ""){
-  //     password.style.border = "2px solid red"
-  //     passwordError.innerHTML = "Password can not be empty"
-  //     passwordError.style = "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-  //     error++
-  // }
-  //  // validating password for minimum length
-  // else if(password.value.length < 3){
-  //     password.style.border = "2px solid red"
-  //     passwordError.innerHTML = "Password must be atleast 3 letters"
-  //     passwordError.style = "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-  //     error++
-  // }
-  // // validating password for maximum length
-  // else if(password.value.length > 14){
-  //     password.style.border = "2px solid red"
-  //     passwordError.innerHTML = "Password must be less than 14 letters"
-  //     passwordError.style = "color: red; font-size:14px; font-family:Arial, Helvetica, sans-serif;";
-  //     error++
-  // } else {
-  //     password.style.border = "2px solid green"
-  //     passwordError.innerHTML = ""
-  // }
 
   // validating first name input emptiness
   if (firstname.value == "") {
@@ -145,9 +119,9 @@ const Validate = (event) => {
     passwordError.innerHTML = "";
   }
 
-   // Confirm password
+  // Confirm password
 
-   if (confirmpassword.value == "") {
+  if (confirmpassword.value == "") {
     confirmpassword.style.border = "2px solid red";
     confirmpasswordError.innerHTML = "Password can't be blank";
     confirmpasswordError.style =
@@ -163,6 +137,7 @@ const Validate = (event) => {
     confirmpassword.style.border = "2px solid darkgreen";
     confirmpasswordError.innerHTML = "";
   }
+
 };
 
 //   // // Get references to the input field and search button
@@ -309,3 +284,45 @@ const Validate = (event) => {
 //       emailError.innerHTML = validationResult.errorMessage;
 //   }
 // });
+
+var baseUrl = "http://localhost:4000/api/auth/";
+
+const submitButton = document.getElementById("submitbutton");
+submitButton.addEventListener("click", newSignup);
+
+async function newSignup(event) {
+  event.preventDefault();
+  let firstname = document.getElementById("firstname").value;
+  let lastname = document.getElementById("lastname").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let confirmpassword = document.getElementById("confirmpassword").value;
+
+  try {
+    console.log(email);
+    const response = await fetch(baseUrl + "signup", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      mode: "cors",
+      body: JSON.stringify({
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        password: password,
+        confirmpassword: confirmpassword,
+      }),
+    });
+    const data = await response.json();
+    if (data.status == 200) {
+      console.log(data.data.role, ">>>>>>>>>");
+      // alert(data.message)
+      setTimeout(function () {
+        location.href = "/auth/login.html";
+      }, 500);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
