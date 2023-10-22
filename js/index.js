@@ -128,13 +128,11 @@ searchInput.addEventListener("keydown", (event) => {
 
 var baseUrl = "http://localhost:4000/api/auth/";
 
-if (error === 0) {
-  // Only proceed with the login request if there are no validation errors
-  newLogin();
-}
 
 const submitButton = document.getElementById("submitbutton");
-submitButton.addEventListener("click", newLogin);
+submitButton.addEventListener("click", (event)  => {
+  newLogin(event); // Pass the event object to newLogin
+});
 
 async function newLogin(event) {
   event.preventDefault();
@@ -160,7 +158,7 @@ async function newLogin(event) {
       // alert(data.message)
       setTimeout(function () {
         if (data.data.role === "user") {
-          location.href = "signup.html";
+          location.href = "/pages/products.html";
         }
       }, 500);
     }
