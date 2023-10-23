@@ -5,8 +5,17 @@
 
  .main {
     width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url(../images/andre-benz-unsplash.jpg);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url(../images/kevin-nalty-yLUM5exvsMA-unsplash.jpg);
     background-position: center;
     background-size: cover;
     height: 109vh;
+ }
+
+ .navbar-brand{
+    color: orangered;
+    font-size: 35px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    font-weight: bold;
  }
