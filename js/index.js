@@ -130,7 +130,7 @@ const baseUrl = "http://localhost:4000/api/auth/";
 
 if (error === 0) {
 
-  newLogin();
+  newLogin(click);
 }
 const submitButton = document.getElementById("submitbutton");
 submitButton.addEventListener("click", newLogin);
