@@ -19,3 +19,17 @@
     float: left;
     font-weight: bold;
  }
+
+ .offcanvas-title{
+   color: orangered;
+   font-size: 25px;
+   font-family: Arial;
+   padding-left: 20px;
+   float: left;
+   padding-top: 10px;
+   font-weight: bold;
+ }
+
+ .nav-item nav-link active{
+   color: red;
+ }
