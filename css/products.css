@@ -27,3 +27,9 @@
     align-items: center;
     margin-left: 38px;
  }
+
+ .card-title{
+   color: brown;
+   font-size: 25px;
+   font-weight: bold;
+ }
