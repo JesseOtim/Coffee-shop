@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    color: orangered;
+    font-weight: bold;
+    padding-top: 50px;
+    padding-left: 40px;
+}
+
+span{
+    color: darkgreen;
+}
