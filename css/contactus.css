@@ -3,13 +3,28 @@
     padding: 0;
 }
 
-h2{
+p{
     color: orangered;
     font-weight: bold;
-    padding-top: 50px;
-    padding-left: 40px;
+    padding-top: 80px;
+    margin-left: 40px;
+}
+
+h2{
+    
+    padding-top: 10px;
+    margin-left: 40px;
 }
 
 span{
     color: darkgreen;
 }
+
+.navbar-brand{
+    color: orangered;
+    font-size: 35px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    font-weight: bold;
+ }
