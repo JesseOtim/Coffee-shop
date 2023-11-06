@@ -32,3 +32,13 @@ span {
   display: flex;
   justify-content: center;
 }
+
+.offcanvas-header{
+  font-size: larger;
+  color: orangered;
+}
+.nav-item a{
+  font-size: large;
+  font-weight: bold;
+  color: darkgreen;
+}
