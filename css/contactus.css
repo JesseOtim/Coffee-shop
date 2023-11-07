@@ -42,3 +42,35 @@ span {
   font-weight: bold;
   color: darkgreen;
 }
+
+.menu {
+  width: 800px;
+  float: left;
+}
+
+ul {
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul li {
+  list-style: none;
+  margin-top: 30px;
+  margin-left: 80px;
+  font-size: 14px;
+}
+
+ul li a {
+  text-decoration: none;
+  color:black;
+  font-family: Arial;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+
+ul li a:hover {
+  color: darkgreen;
+}
+
